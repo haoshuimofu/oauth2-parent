@@ -1,5 +1,6 @@
 package com.demo.oauth2.qq.controller;
 
+import com.alibaba.fastjson.JSON;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -52,7 +53,7 @@ public class AuthController {
 
     @RequestMapping("token")
     @ResponseBody
-    public Object token(@RequestParam("client_id") String clientId,
+    public String token(@RequestParam("client_id") String clientId,
                         @RequestParam("secret") String secret,
                         @RequestParam("code") String code,
                         @RequestParam(value = "grant_type", defaultValue = "authorization_code") String grantType,
@@ -67,7 +68,7 @@ public class AuthController {
         dataMap.put("expires_in", 7200);
         dataMap.put("open_id", "wangbo");
         dataMap.put("scope", "app");
-        return dataMap;
+        return JSON.toJSONString(dataMap);
     }
 
 }
