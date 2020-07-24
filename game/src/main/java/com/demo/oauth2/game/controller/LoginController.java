@@ -23,7 +23,7 @@ public class LoginController {
         model.addAttribute("notice", "暂不支持系统登录，请使用qq连登!");
 
         model.addAttribute("authUrl", configProperties.authUrl);
-        model.addAttribute("redirectUri", configProperties.authUrl);
+        model.addAttribute("redirectUri", configProperties.redirectUrl);
         model.addAttribute("clientId", configProperties.clientId);
         model.addAttribute("secret", configProperties.secret);
         return "union-login";

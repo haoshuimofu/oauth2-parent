@@ -7,6 +7,8 @@ import org.springframework.web.servlet.config.annotation.InterceptorRegistration
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
+import java.util.Arrays;
+
 /**
  * @author wude
  * @date 2020/7/23 12:55
@@ -24,7 +26,7 @@ public class MvcConfiguration extends WebMvcConfigurationSupport {
         //注册自定义拦截器，添加拦截路径和排除拦截路径
         InterceptorRegistration registration = registry.addInterceptor(loginInterceptor());
 
-        registration.excludePathPatterns("/login/**");
+        registration.excludePathPatterns(Arrays.asList("/login/**", "/oauth2/**"));
     }
 
 }

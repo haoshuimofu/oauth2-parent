@@ -13,6 +13,9 @@ public class ConfigProperties {
     @Value("${app.authUrl}")
     public String authUrl;
 
+    @Value("${app.redirectUri}")
+    public String redirectUrl;
+
     @Value("${app.clientId}")
     public String clientId;
 

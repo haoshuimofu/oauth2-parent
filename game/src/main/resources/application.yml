@@ -14,5 +14,6 @@ spring:
 ## app info
 app:
   authUrl: http://localhost:8081/qq/oauth2/authorize
+  redirectUri: http://localhost:8080/game/oauth2/callback
   clientId: game-abcxyz
   secret: gameabcxyc
