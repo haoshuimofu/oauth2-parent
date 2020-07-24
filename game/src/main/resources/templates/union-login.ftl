@@ -6,6 +6,6 @@
 </head>
 <body>
 <p>sorry, ${notice}</p>
-<a href="${authUrl}?client_id=${clientId}&secret=${secret}&response_type=code&scope=app&redirect_uri=${redirectUri}">qq登录</a>
+<a href="${authUrl}?client_id=${clientId}&response_type=code&scope=app&redirect_uri=${redirectUri}">qq登录</a>
 </body>
 </html>

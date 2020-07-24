@@ -30,18 +30,17 @@ public class AuthController {
 
     @RequestMapping("authorize")
     public String authorize(@RequestParam("client_id") String clientId,
-                            @RequestParam("secret") String secret,
                             @RequestParam("response_type") String responseType,
                             @RequestParam("redirect_uri") String redirectUri,
                             @RequestParam("scope") String scope,
                             HttpServletResponse response, Model model) throws Exception {
 
-        logger.info("### oauth2/authorize! client_id=[{}], secret=[{}], response_type=[{}], redirect_uri=[{}], scope=[{}].",
-                clientId, secret, responseType, redirectUri, scope);
+        logger.info("### oauth2/authorize! client_id=[{}], response_type=[{}], redirect_uri=[{}], scope=[{}].",
+                clientId, responseType, redirectUri, scope);
         // 校验clientId 和 secrete, 看客户端提交的信息是否正确
         String code = UUID.randomUUID().toString();
-        logger.info("### 认证服务器接收到的商户信息正确! 返回商户授权码! clientId=[{}], secret=[{}], code=[{}].",
-                clientId, secret, code);
+        logger.info("### 认证服务器接收到的商户信息正确! 返回商户授权码! clientId=[{}], code=[{}].",
+                clientId, code);
         if (true) {
             response.sendRedirect(redirectUri + "?code=" + code);
             return null;

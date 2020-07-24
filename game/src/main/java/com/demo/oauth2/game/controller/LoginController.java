@@ -25,7 +25,6 @@ public class LoginController {
         model.addAttribute("authUrl", configProperties.authUrl);
         model.addAttribute("redirectUri", configProperties.redirectUrl);
         model.addAttribute("clientId", configProperties.clientId);
-        model.addAttribute("secret", configProperties.secret);
         return "union-login";
     }
 
