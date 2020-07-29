@@ -43,7 +43,7 @@ public class AuthController {
         params.put("secret", configProperties.secret);
         params.put("code", code);
         params.put("grant_type", "authorization_code");
-        String tokenResult = HttpUtil.get("http://localhost:8081/qq/oauth2/token", params, 3000);
+        String tokenResult = HttpUtil.get("http://localhost:8081/qq/oauth2/token", params, 30000);
         JSONObject json = JSONObject.parseObject(tokenResult);
 
         logger.info("### 根据code换取token! code=[{}], token_result=[{}].", code, json == null ? "" : json.toJSONString());

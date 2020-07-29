@@ -41,6 +41,7 @@ public class AuthController {
         String code = UUID.randomUUID().toString();
         logger.info("### 认证服务器接收到的商户信息正确! 返回商户授权码! clientId=[{}], code=[{}].",
                 clientId, code);
+        Thread.sleep(3000);
         if (true) {
             response.sendRedirect(redirectUri + "?code=" + code);
             return null;
@@ -56,11 +57,11 @@ public class AuthController {
                         @RequestParam("secret") String secret,
                         @RequestParam("code") String code,
                         @RequestParam(value = "grant_type", defaultValue = "authorization_code") String grantType,
-                        HttpServletRequest request, HttpServletResponse response) {
+                        HttpServletRequest request, HttpServletResponse response) throws Exception {
         logger.info("### 商户客户端根据授权码换取access_token!");
 
         // 校验secret
-
+        Thread.sleep(3000);
 
         Map<String, Object> dataMap = new HashMap<>();
         dataMap.put("access_token", UUID.randomUUID().toString());
